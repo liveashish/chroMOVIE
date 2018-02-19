@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
-<script src="/js/jquery/jquery.min.js"></script>`
-<script src="/js/rgbaster.js"></script>`
+<script src="/js/jquery/jquery.min.js"></script>
+<script src="/js/rgbaster.js"></script>
 <script src="override.js"></script>
 <style>
 	#gif_img {
@@ -9,17 +9,39 @@
 		transform: translate(-50%, -50%);
 		margin: 0;
 		left: 0;
-		top: 50%;
+		top: 35%;
 		left: 50%;
 		margin-right: -50%;
 		height: 300px;
 		width: auto;
 	}
+
+	.time p{
+		font-family: sans-serif;
+		font-size: 45px;
+		margin: 0;
+		color: white;
+	}
+	.date p{
+		font-family: monospace;
+		font-size: 16px;
+		margin: 0;
+		color: white;
+	}
 </style>
 <head>
-	<title>CHROMoviE</title>
+	<title>chroMOVIE</title>
 </head>
 <body>
-<img src="" id="gif_img">
+<div class="content">
+	<div class="img-content">
+		<img src="" id="gif_img">
+	</div>
+	<div class="info">
+		<div class="time"><p></p></div>
+		<div class="date"><p></p></div>
+	</div>
+</div>
+
 </body>
 </html>

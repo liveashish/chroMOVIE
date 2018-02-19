@@ -8,8 +8,10 @@ $.ajax({
     dataType: 'json',
     success: function (result) {
         var d = new Date()
-        var hours = d.getHours() % 12 || 12;
-        var time = hours + ":" + d.getMinutes()
+        var time = formatAMPM(d)
+        var date = d.toDateString()
+        $('.time p').html(time)
+        $('.date p').html(date)
         var img = result.data.images.downsized.url
         img = img.replace("media0", "i")
         RGBaster.colors(img, {
@@ -27,3 +29,14 @@ $.ajax({
     
 });
 
+
+function formatAMPM(date) {
+    var hours = date.getHours();
+    var minutes = date.getMinutes();
+    var ampm = hours >= 12 ? 'PM' : 'AM';
+    hours = hours % 12;
+    hours = hours ? hours : 12; // the hour '0' should be '12'
+    minutes = minutes < 10 ? '0'+minutes : minutes;
+    var strTime = hours + ':' + minutes + ' ' + ampm;
+    return strTime;
+}
